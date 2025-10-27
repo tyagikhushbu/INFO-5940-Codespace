@@ -90,3 +90,35 @@ You will receive an individual API Key for class assignments. To prevent acciden
 
 ## Troubleshooting
 - The Jupyter extension should install automatically. If you still cannot select a Python kernel on Jupyter Notebook: Go to the left sidebar >> **Extensions** >> search for **Jupyter** >> reload window (or reinstall it).   
+
+
+## How to Run
+
+# RAG Chat (LangChain + Chroma + Streamlit)
+
+A Retrieval-Augmented Generation (RAG) app that lets users upload **.txt** and **.pdf** files and chat with their contents. It uses **Streamlit** for the UI, **LangChain** for the RAG pipeline, and **ChromaDB** for the vector store. The app supports **multiple document uploads**, **chunking for large files**, and a **conversational** interface that grounds answers in retrieved sources.
+
+This README is written for the code in **chat_with_pdf.py** exactly as provided.
+
+---
+
+## ✨ Features
+- Upload **multiple** `.txt` and `.pdf` files
+- Efficient chunking for **large documents** (default: 1000 chars / 200 overlap)
+- Persistent **Chroma** index (default: `./.chroma`)
+- **Conversational** chat with source attributions
+- Works with **OpenAI** (chat + embeddings) or can be adapted to **local embeddings**
+
+---
+
+## 🚀 Quickstart (Codespaces or Local)
+
+### 1) Environment
+If using OpenAI:
+```bash
+export OPENAI_API_KEY="sk-...your key..."
+
+pip install -r requirements.txt
+
+streamlit run chat_with_pdf.py
+Open the URL Streamlit
